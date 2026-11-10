@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JokeApp.Interfaces
+namespace JokeApp.Services.Interfaces
 {
-    public interface IChuckNorrisHttpApiService
+    public interface IChuckNorrisApiService
     {
         Task<string> GetJokeAsync();
     }

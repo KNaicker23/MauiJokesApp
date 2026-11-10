@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JokeApp.Interfaces
+namespace JokeApp.Services.Interfaces
 {
     public interface IConfigurationService
     {

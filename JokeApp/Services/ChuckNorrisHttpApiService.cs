@@ -1,49 +1,43 @@
-﻿using JokeApp.Interfaces;
-using JokeApp.Models;
-using Newtonsoft.Json;
+﻿using JokeApp.Models;
+using JokeApp.Services.Interfaces;
+
 using System;
 using System.Collections.Generic;
-using System.Net.Http.Json;
 using System.Text;
-
 using System.Text.Json;
-using System.Text.Json.Serialization;
 
 namespace JokeApp.Services
 {
-    public class ChuckNorrisHttpApiService: IChuckNorrisHttpApiService
+    public class ChuckNorrisApiHttpService : IChuckNorrisApiService
     {
-        private IConfigurationService _configurationService;
         private HttpClient _httpClient;
-        public ChuckNorrisHttpApiService(IConfigurationService configurationService)
+        private IConfigurationService _configurationService;
+        public ChuckNorrisApiHttpService(IConfigurationService service)
         {
-            _configurationService = configurationService;
+            _configurationService = service;
 
             _httpClient = new HttpClient();
-
         }
-        public async Task<string> GetJokeAsync()
 
+        public async Task<string> GetJokeAsync()
         {
             HttpResponseMessage response = await _httpClient.GetAsync(_configurationService.ChuckNorrisApiUrl);
-            //return _httpClient.GetStringAsync(_configurationService.ChuckNorrisApiUrl).Result;
 
             if (response.IsSuccessStatusCode)
             {
                 string jsonContent = await response.Content.ReadAsStringAsync();
-                ChuckNorrisJoke Joke = JsonConvert.DeserializeObject(jsonContent) as ChuckNorrisJoke;
 
-                if (Joke != null)
+
+
+                ChuckNorrisJoke joke = JsonSerializer.Deserialize<ChuckNorrisJoke>(jsonContent);
+
+                if (joke != null)
                 {
-                    return Joke.value;
-                }
-                else
-                {
-                    return "No joke found.";
+                    return joke.value;
                 }
             }
-            return null;
 
+            return null;
         }
     }
 }

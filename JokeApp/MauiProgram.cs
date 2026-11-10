@@ -1,4 +1,9 @@
 ﻿using Microsoft.Extensions.Logging;
+using JokeApp.Services;
+using JokeApp.Services.Interfaces;
+using JokeApp.ViewModels;
+using JokeApp.Views;
+
 
 namespace JokeApp
 {
@@ -18,7 +23,12 @@ namespace JokeApp
 #if DEBUG
     		builder.Logging.AddDebug();
 #endif
+            builder.Services.AddSingleton<IConfigurationService, ConfigurationService>();
+            builder.Services.AddSingleton<IChuckNorrisApiService, ChuckNorrisApiHttpService>();
+            builder.Services.AddSingleton<IPopUps, MauiPopupService>();
 
+            builder.Services.AddTransient<JokesView>();
+            builder.Services.AddTransient<JokesViewModel>();
             return builder.Build();
         }
     }

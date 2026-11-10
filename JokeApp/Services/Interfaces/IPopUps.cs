@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace JokeApp.Interfaces
+namespace JokeApp.Services.Interfaces
 {
-    internal interface IPopUp
+    internal interface IPopUps
     {
         Task ShowingPopUp(string title, string message, string buttonText);
     }

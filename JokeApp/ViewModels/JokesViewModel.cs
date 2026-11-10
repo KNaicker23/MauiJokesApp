@@ -1,10 +1,11 @@
 ﻿//using Android.App;
-using JokeApp.Interfaces;
+using JokeApp.Services.Interfaces;
 using JokeApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Windows.Input;
+
 
 namespace JokeApp.ViewModels
 {
@@ -23,8 +24,8 @@ namespace JokeApp.ViewModels
             }
         }
 
-        private IChuckNorrisHttpApiService _chuckNorriesApiService;
-        public JokesViewModel(IChuckNorrisHttpApiService service)
+        private IChuckNorrisApiService _chuckNorriesApiService;
+        public JokesViewModel(IChuckNorrisApiService service)
 
         {
             _chuckNorriesApiService = service;
