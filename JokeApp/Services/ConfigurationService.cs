@@ -13,7 +13,7 @@ namespace JokeApp.Services
         public ConfigurationService()
         {
             ChuckNorrisApiUrl = "https://api.chucknorris.io/jokes/random";
-            DadJokeApiUrl = "https://icanhazdadjoke.com/";
+            DadJokeApiUrl =  "https://icanhazdadjoke.com/";
         }
     }
 }

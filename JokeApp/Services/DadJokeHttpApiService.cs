@@ -16,6 +16,7 @@ namespace JokeApp.Services
             _configurationService = service;
 
             _httpClient = new HttpClient();
+            _httpClient.DefaultRequestHeaders.Add("Accept", "application/json");
         }
         public async Task<string> GetJokeAsync()
         {
