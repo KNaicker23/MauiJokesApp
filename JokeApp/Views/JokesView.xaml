@@ -2,13 +2,21 @@
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="JokeApp.Views.JokesView"
-             Title="JokesView">
+             Title="Your Dad is not Funny">
+    
     <VerticalStackLayout Padding="20" Spacing="20">
         <Label 
            Text="Chuck Norris Joke"
            FontSize="22"
            FontAttributes="Bold"
            HorizontalOptions="Center"/>
+        <Image
+            Source="chuck_norris.jpeg"
+            HeightRequest="200"
+            WidthRequest="150"
+            Aspect="AspectFit"
+            HorizontalOptions="Center"/>
+
 
         <Label 
             Text = "{Binding ChuckNorrisJoke}"
@@ -19,6 +27,13 @@
             Text="Dad Joke"
             FontSize="22"
             FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+        
+        <Image
+            Source="dad_joke.jpeg"
+            HeightRequest="150"
+            WidthRequest="150"
+            Aspect="AspectFit"
             HorizontalOptions="Center"/>
 
         <Label
