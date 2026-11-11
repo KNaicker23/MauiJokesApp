@@ -23,7 +23,7 @@ namespace JokeApp.Services
         {
             HttpResponseMessage response = await _httpClient.GetAsync(_configurationService.ChuckNorrisApiUrl);
 
-            if (response.IsSuccessStatusCode)
+            if (response.IsSuccessStatusCode)//we are interested if it is 200 Ok, and if it is a success
             {
                 string jsonContent = await response.Content.ReadAsStringAsync();
 

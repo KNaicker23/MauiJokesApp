@@ -4,7 +4,7 @@ using System.Text;
 
 namespace JokeApp.Models
 {
-    internal class ChuckNorrisJoke
+    public class ChuckNorrisJoke
     {
         public List<object> categories { get; set; }
         public string created_at { get; set; }

@@ -5,12 +5,11 @@ using System.Text;
 
 namespace JokeApp.Services
 {
-    internal class MauiPopupService : IPopUps
+    public class MauiPopupService : IPopUps
     {
-        public async Task ShowingPopUp(string title, string message, string buttonText)
+        public async Task ShowPopupAsync(string title, string message, string buttons)
         {
-            await Shell.Current.DisplayAlertAsync(title, message, buttonText);
-
+            await Shell.Current.DisplayAlertAsync(title, message, buttons);
         }
     }
 }

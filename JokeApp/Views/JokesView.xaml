@@ -1,13 +1,35 @@
 <?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="JokeApp.Views.JokeView"
+             x:Class="JokeApp.Views.JokesView"
              Title="JokesView">
-    <VerticalStackLayout>
+    <VerticalStackLayout Padding="20" Spacing="20">
         <Label 
-            Text = "{Binding ChuckNorrisJoke}"/>
+           Text="Chuck Norris Joke"
+           FontSize="22"
+           FontAttributes="Bold"
+           HorizontalOptions="Center"/>
+
+        <Label 
+            Text = "{Binding ChuckNorrisJoke}"
+            FontSize="16"
+            HorizontalOptions="Center"/>
+
+        <Label 
+            Text="Dad Joke"
+            FontSize="22"
+            FontAttributes="Bold"
+            HorizontalOptions="Center"/>
+
+        <Label
+            Text="{Binding DadJoke}"
+            FontSize="16"
+            HorizontalOptions="Center"/>
+
+
+
         <Button
-            Text="Get Joke"
+            Text="Get New Joke"
             Command="{Binding GetJokeCommand}"/>
     </VerticalStackLayout>
 </ContentPage>

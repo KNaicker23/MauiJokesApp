@@ -25,6 +25,9 @@ namespace JokeApp
 #endif
             builder.Services.AddSingleton<IConfigurationService, ConfigurationService>();
             builder.Services.AddSingleton<IChuckNorrisApiService, ChuckNorrisApiHttpService>();
+            builder.Services.AddSingleton<IDadJokeApiService, DadJokeHttpApiService>();
+
+
             builder.Services.AddSingleton<IPopUps, MauiPopupService>();
 
             builder.Services.AddTransient<JokesView>();

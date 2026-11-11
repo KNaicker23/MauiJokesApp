@@ -4,8 +4,8 @@ using System.Text;
 
 namespace JokeApp.Services.Interfaces
 {
-    internal interface IPopUps
+    public interface IPopUps
     {
-        Task ShowingPopUp(string title, string message, string buttonText);
+        Task ShowPopupAsync(string title, string message, string buttonText);
     }
 }
